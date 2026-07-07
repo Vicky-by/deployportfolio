@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if success %}Thank You{% else %}Message Not Sent{% endif %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f9;
+            text-align: center;
+            padding: 50px;
+        }
+        .thankyou-box {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            max-width: 560px;
+        }
+        h1 {
+            color: {% if success %}#28a745{% else %}#dc3545{% endif %};
+        }
+        p {
+            color: #333;
+            line-height: 1.6;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            background: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        a:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="thankyou-box">
+        {% if success %}
+            <h1>Thank You!</h1>
+            <p>Your message has been sent successfully. We will get back to you soon.</p>
+        {% else %}
+            <h1>Message Not Sent</h1>
+            <p>Email settings are missing. Please add the mail environment variables on your hosting dashboard and try again.</p>
+        {% endif %}
+        <a href="/">Go Back to Home</a>
+    </div>
+</body>
+</html>
